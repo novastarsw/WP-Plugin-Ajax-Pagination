@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Ajax Pagination.
+ * Plugin Name: Ajax Pagination
  * Plugin URI: https://github.com/novastarsw/WP-Plugin-Ajax-Pagination
  * Description: Ajax pagination plugin for post.
  * Version: 1.0.0
