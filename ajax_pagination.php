@@ -18,11 +18,35 @@ define( 'NOVA_AJAX_PAGINATION_URL',         plugins_url( basename(plugin_dir_pat
 class Nova_Ajax_Pagination {
 
     public function __construct() {
-        add_action('wp_head', array($this, 'nova_napp_wp_header'));
+        add_action('wp_enqueue_scripts', array($this, 'nova_napp_wp_enqueue_stylesheet'));
+        add_action('loop_end', array($this, 'nova_napp_ajax_pagination'));
+    }
+    
+    public function nova_napp_wp_enqueue_stylesheet() {
+        wp_enqueue_style( 'nova-napp-stylesheet', NOVA_AJAX_PAGINATION_URL . '/css/style.css' );
     }
 
-    public function nova_napp_wp_header() {
-        wp_enqueue_style( 'nova-napp-stylesheet', NOVA_AJAX_PAGINATION_URL . '/css/style.css' );
+    public function nova_napp_ajax_pagination() {
+        ?>
+        <div class="nova-napp-navigation">
+            <div class="nova-napp-pagination">
+                <a href="">&laquo;</a>
+                <a href="">1</a>
+                <a href="">2</a>
+                <a href="">3</a>
+                <a href="">4</a>
+                <a href="">5</a>
+                <a href="">6</a>
+                <a href="">&raquo;</a>
+            </div>
+            <select class="nova-napp-post-count">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+            </select>
+        </div>
+        <?php
     }
 }
 

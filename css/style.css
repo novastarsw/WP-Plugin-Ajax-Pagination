@@ -1,3 +1,24 @@
 .navigation.pagination {
     display:none !important;
 }
+
+.nova-napp-navigation{
+    margin-top:10px;
+    display: flex;
+    justify-content: center;
+}
+
+.nova-napp-navigation {
+    font-size:14px;
+}
+
+.nova-napp-pagination {
+    display: inline-block;
+}
+
+.nova-napp-pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
